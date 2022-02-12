@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+
+}
+.header{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),url(images/home-page-img.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 7%;
+    background-color: #fff;
+
+}
+.logo{
+    width: 140px;
+    cursor: pointer;
+
+}
+
+.nav-links li a img{
+    color: rgb(94, 6, 6);
+    /* filter: grayscale(10); */
+    
+}
+
+.nav-links li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: #000;
+
+}
+
+.register-btn{
+     background: rgb(192, 36, 36);
+     color: rgb(241, 224, 224);
+     padding: 8px 15px;
+     text-decoration: none;
+     border-radius: 20px;
+     font-size: 14px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+
+}
+.register-btn:hover{
+    background-color: rgb(79, 209, 79);
+    /* color: whitesmoke; */
+    color: black;
+    font-weight: 600;
+}
+
+.container{
+    padding: 0 7%;
+}
+.container h1{
+    color: #fff;
+    text-align: center;
+    font-size: 4vw;
+    font-weight: 600;
+    padding-top: 16% ;
+    line-height: 55px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+}
+
+.container .banner_p{
+    background: green;
+    padding: 2px;
+    color: #fff;
+    font-size: 15px;
+    width: 380px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 35%;
+}
+
+.container .join_us{
+    background: brown;
+    color: #fff;
+    padding: 8px 16px;
+    letter-spacing: 2px;
+    font-size: 16px; 
+    font-weight: 600;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    margin-top: 12px;
+    margin-left: 45%;
+}
+.container .join_us:hover{
+    background: #fff;
+    color: brown;
+
+}
+
+
+/* -------------- active css -------------- */
+.active{
+    position: relative;
+
+}
+
+.active::after{
+    content: "";
+    background: rgb(192, 36, 36);
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 2px;
+
+}
+
+/* 
+==========================================
+togggle button css
+=====================================
+*/
+nav .fa-bars{
+    display: none;
+
+}
+
+
+/* for tablet screen device 768px in css */
+@media only screen and (max-width:786px){
+     
+    .logo{
+        position: fixed;
+        top: 2%;
+        left: 7%;
+    }
+    .register-btn{
+        position: fixed;
+        top: 2%;
+        right: 7%;
+        margin: 25px 0 7%;
+        padding: 12px 21px;
+        
+    }
+    .hidemenu{
+        position: fixed;
+        /* top: 2%; */
+        /* margin: 0 auto; */
+        /* max-height: 100px; */
+
+    }
+
+    nav{
+        position: fixed;
+        top: 0;
+        /* z-index: 100; */
+        width: 100%;
+        padding: 85px 7% 0px;
+        background: #fff;
+        display: inline-block;
+        /* toggle */
+        max-height: 180px;
+        overflow: hidden;
+        transition: max-height 0.5s;
+     
+    }
+    .hidemenu{
+        max-height: 200px;
+    }
+    
+    .header h1{
+        padding-top: 320px;  
+        font-size: 7vw;
+        line-height: 44px;
+ 
+     }
+
+     /* bannre_p */
+  .container .banner_p{
+
+    margin-left:20%;
+    padding: 4px;
+}
+/* join_us */
+.container .join_us{
+    margin-left: 39%;
+}
+
+}
+
+/* ------------- for small screen device ------------ */
+
+@media only screen and (max-width:576px){
+
+    .logo{
+        position: fixed;
+        top: 2%;
+        left: 7%;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        width: 100%;
+        padding: 100px 7% 0px;
+        background: #fff;
+        text-align: right;
+        display: inline-block;
+        /* toggle */
+        max-height: 100px;
+        overflow: hidden;
+        transition: max-height 0.5s;
+       
+    }
+
+    nav .nav-links li{
+        margin: 10px 0;
+        display: block;
+
+    }
+    .register-btn{
+        position: relative;
+        right: 0;
+        margin: 15px 0 15px;
+        display: inline-block;
+        
+    }
+
+    nav .fa-bars{
+        display: block;
+        position: fixed;
+        top: 6%;
+        right: 7%;
+        color: #000;
+        font-size: 28px;
+
+
+    }
+    /* toggle btn */
+    .active::after{
+        left: -40px;
+        transform: translate(0, 50%);
+        bottom: 50%;
+
+    }
+    .hidemenu{
+        max-height: 400px;
+
+    }
+    /* toggle end */
+
+    .header h1{
+       padding-top: 310px;  
+       font-size: 7vw;
+       line-height: 34px;
+
+    }
+
+  /* bannre_p */
+  .container .banner_p{
+
+      margin-left: 1%;
+  }
+  /* join_us */
+  .container .join_us{
+      margin-left: 38%;
+  }
+}
+
+
